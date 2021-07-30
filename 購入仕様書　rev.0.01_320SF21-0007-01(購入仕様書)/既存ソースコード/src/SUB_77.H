@@ -1,0 +1,20 @@
+////////// extern header /////////////
+void    io_init(void);
+void    trans_state(void);
+void    trans_data(void);
+//void    alarm_data(U_INT pui_alm_data);
+void    command_op(void);
+void    trb_data(void);
+void    dg1_to_as2(void);
+void    as2_to_dg1(void);
+U_INT   sum_calc(U_INT *buffer,U_INT num);
+void    tr_denst(void);
+void    tx_set(void);
+void    tr_error (void);
+void    rx_lamp_on(void);
+void    tx_lamp_on(void);
+U_INT   sum_io_in(U_INT num);
+//void    time_loop(void);
+void    max_min_state(void);
+void    max_min_data(void);
+void    max_hertbeat(void);

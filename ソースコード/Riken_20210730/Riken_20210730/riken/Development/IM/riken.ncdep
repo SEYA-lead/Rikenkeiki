@@ -1,0 +1,191 @@
+; Echelon Dependency File - do not edit.
+; C:\lm\Source\Riken\riken\Development\IM\riken.ncdep
+; Created Friday, July 30, 2021, 09:52:10
+
+[Global]
+Provider=NEURON C Compiler
+Version=1
+Inputs=20
+Outputs=0
+Switches=15
+Parameters=1
+
+[Input_1]
+Basename=NbPlatforms.xml
+Fullname=C:\Program Files (x86)\LonWorks\NodeBuilder\Templates\Hardware\NbPlatforms.xml
+Type=0
+Size=3596
+TimestampHigh=0x1d510d6
+TimestampLow=0x2493a800
+
+[Input_2]
+Basename=Neuron.xml
+Fullname=C:\Program Files (x86)\LonWorks\Types\Neuron.xml
+Type=0
+Size=98546
+TimestampHigh=0x1d510d6
+TimestampLow=0x2493a800
+
+[Input_3]
+Basename=Default.ver
+Fullname=C:\Program Files (x86)\LonWorks\Images\Default.ver
+Type=0
+Size=630
+TimestampHigh=0x1d510de
+TimestampLow=0x6294ca00
+
+[Input_4]
+Basename=BFT5000.sym
+Fullname=C:\Program Files (x86)\LonWorks\Images\Ver19\BFT5000.sym
+Type=0
+Size=10499
+TimestampHigh=0x1d10496
+TimestampLow=0x1b4b9a00
+
+[Input_5]
+Basename=70DLNDV.NC
+Fullname=C:\Users\info\Desktop\riken\src\70DLNDV.NC
+Type=0
+Size=537
+TimestampHigh=0x1d737fb
+TimestampLow=0x58fccb00
+
+[Input_6]
+Basename=BPLATE.NS
+Fullname=C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\BPLATE.NS
+Type=1
+Size=6967
+TimestampHigh=0x1d510de
+TimestampLow=0x6294ca00
+
+[Input_7]
+Basename=ECHELON.H
+Fullname=C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\ECHELON.H
+Type=1
+Size=26123
+TimestampHigh=0x1d510de
+TimestampLow=0x6294ca00
+
+[Input_8]
+Basename=MODNVLEN.H
+Fullname=C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\MODNVLEN.H
+Type=1
+Size=6293
+TimestampHigh=0x1d510de
+TimestampLow=0x6294ca00
+
+[Input_9]
+Basename=SNVT_LEV.H
+Fullname=C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\SNVT_LEV.H
+Type=0
+Size=592
+TimestampHigh=0x1d3b061
+TimestampLow=0xbfcbd800
+
+[Input_10]
+Basename=CONTROL.H
+Fullname=C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\CONTROL.H
+Type=0
+Size=3135
+TimestampHigh=0x1d510de
+TimestampLow=0x6294ca00
+
+[Input_11]
+Basename=FLOAT.H
+Fullname=C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\FLOAT.H
+Type=0
+Size=5233
+TimestampHigh=0x1d510de
+TimestampLow=0x6294ca00
+
+[Input_12]
+Basename=ACCESS.H
+Fullname=C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\ACCESS.H
+Type=0
+Size=12149
+TimestampHigh=0x1d510de
+TimestampLow=0x6294ca00
+
+[Input_13]
+Basename=ADDRDEFS.H
+Fullname=C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\ADDRDEFS.H
+Type=0
+Size=3118
+TimestampHigh=0x1d510de
+TimestampLow=0x6294ca00
+
+[Input_14]
+Basename=BYTE.H
+Fullname=C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\BYTE.H
+Type=0
+Size=734
+TimestampHigh=0x1d510de
+TimestampLow=0x6294ca00
+
+[Input_15]
+Basename=SLAV_77.H
+Fullname=C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H
+Type=0
+Size=7636
+TimestampHigh=0x1d784dc
+TimestampLow=0xf8426f0c
+
+[Input_16]
+Basename=SUB_77.H
+Fullname=C:\USERS\INFO\DESKTOP\RIKEN\SRC\SUB_77.H
+Type=0
+Size=587
+TimestampHigh=0x1d737fb
+TimestampLow=0x58fccb00
+
+[Input_17]
+Basename=MAIN_77.C
+Fullname=C:\USERS\INFO\DESKTOP\RIKEN\SRC\MAIN_77.C
+Type=0
+Size=15087
+TimestampHigh=0x1d75dc0
+TimestampLow=0xd4382ecd
+
+[Input_18]
+Basename=DENST_77.C
+Fullname=C:\USERS\INFO\DESKTOP\RIKEN\SRC\DENST_77.C
+Type=0
+Size=4252
+TimestampHigh=0x1d737fb
+TimestampLow=0x58fccb00
+
+[Input_19]
+Basename=ETC_77.C
+Fullname=C:\USERS\INFO\DESKTOP\RIKEN\SRC\ETC_77.C
+Type=0
+Size=2757
+TimestampHigh=0x1d737fb
+TimestampLow=0x58fccb00
+
+[Input_20]
+Basename=COMM_77.C
+Fullname=C:\USERS\INFO\DESKTOP\RIKEN\SRC\COMM_77.C
+Type=0
+Size=745
+TimestampHigh=0x1d737fb
+TimestampLow=0x58fccb00
+
+[Switches]
+34=FT 5000
+2=1
+0=0
+10=C:\Users\info\Desktop\riken\src
+10=C:\Program Files (x86)\LonWorks\NodeBuilder\CodeWizard\Include
+10=C:\Program Files (x86)\LonWorks\NeuronC\Include
+11=_NODEBUILDER
+11=_NEURONC
+11=_DEBUG
+14=C:\lm\Source\Riken\riken\Development\IM\riken
+17=1
+23=1
+24=0
+15=4
+26=9000000000000005
+
+[Parameters]
+MainSourceFile=C:\Users\info\Desktop\riken\src\70DLNDV.NC

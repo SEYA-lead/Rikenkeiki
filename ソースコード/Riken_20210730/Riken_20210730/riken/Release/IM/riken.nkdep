@@ -1,0 +1,17 @@
+; Echelon Dependency File - do not edit.
+; C:\lm\Source\Riken\riken\Release\IM\riken.nkdep
+; Created Friday, July 30, 2021, 09:52:21
+
+[Global]
+Provider=Echelon NodeBuilder Make Facility
+Version=1
+Inputs=0
+Outputs=0
+Switches=0
+Parameters=2
+
+[Switches]
+
+[Parameters]
+BuildtimeH=30901544
+BuildtimeL=-1760872320

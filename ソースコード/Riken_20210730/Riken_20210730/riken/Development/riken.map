@@ -1,0 +1,1162 @@
+Neuron Linker Version 5.39.03 Copyright (c) Echelon Corporation 1992-2019
+Linked at Fri Jul 30 09:52:11 2021
+C:\lm\Source\Riken\riken\Development\IM\riken.nxr
+
+                       LIST OF MEMORY AREAS
+
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+
+SYSTEM IMAGE ROM             0000 3FFF 4000        - RESERVED - 
+
+OffChip NVRAM  (EECODE)      4000 51FF 1200       515F 51FF 00A1
+OffChip NVRAM  (Pool)         - AVAILABLE -       5200 BFFF 6E00
+
+OffChip RAM    (Pool)         - AVAILABLE -       C000 E5FF 2600
+OffChip RAMFAR               E600 E7FF 0200       E600 E64D 004E
+
+OnChip  RAM    (System)      E800 EEEC 06ED          - NONE -   
+OnChip  RAM    (Pool)         - AVAILABLE -       EEED EF0B 001F
+OnChip  RAMNEAR              EF0C EFFF 00F4          - NONE -   
+
+OnChip  EEPROM (Prolog)      F000 F02D 002E          - NONE -   
+OnChip  EEPROM (Config)      F02E F158 012B          - NONE -   
+OnChip  EEPROM (MemCtl)      F159 F166 000E          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F167 F7DE 0678
+OnChip  EENEAR               F7DF F7FE 0020       F7DF F7E0 0002
+OnChip  EEPROM (Epilog)      F7FF F7FF 0001          - NONE -   
+Transient      (Table)   000000 000000 000000        - NONE -   
+Transient      (Code)    000000 000000 000000        - NONE -   
+
+End of Memory Area List
+
+Link Memory Usage Statistics:
+
+EEPROM Usage:  (not necessarily in order of physical layout)
+               (includes application use of external NVRAM)
+        System Data and Parameters          89 bytes
+        Domain and Address Tables           90 bytes
+        Network Variable Config Tables     183 bytes
+        System EENEAR Variables              2 bytes
+        Onchip Data Area Fragmentation       2 bytes
+        Application EEPROM Variables        10 bytes
+        Library EEPROM Variables            18 bytes
+        Application Code and Const Data   3075 bytes
+        Library Code and Const Data        806 bytes
+        Self-Identification Data           564 bytes
+                                         -----
+        Total EEPROM Requirement          4839 bytes
+        Remaining EEPROM                 29977 bytes
+
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         701 bytes
+        Transaction Control Blocks         236 bytes
+        Appl Timers and I/O Change Events   32 bytes
+        Network and Application Buffers    804 bytes
+        Network Debugger Memory Buffer     240 bytes(*)
+        Application RAM Variables          438 bytes
+        Library RAM Variables                0 bytes
+                                         -----
+        Total RAM Requirement             2451 bytes(*)
+        Remaining RAM                     9837 bytes(*)
+
+Transient Code Usage:
+        Transient code                       0 functions
+        Transient code for functions         0 bytes
+        Transient code table                 0 bytes
+                                         -----
+        Total transient data                 0 bytes
+
+Successfully linked for FT 5000.
+        Memory Map (9 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        Onchip EEPROM Data Fragmentation (2 bytes) varies by Neuron model.
+        System EENEAR Variables (2 bytes) varies by firmware version.
+        System Upper EEPROM Area (1 byte) varies by firmware version.
+        16 receive transaction blocks require 16 * 13 = 208 bytes.
+        28 bytes for non-priority transmit transaction control blocks
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 439 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        Default buffer counts vary by Neuron model
+                (resulting in an additional 108 bytes of RAM).
+        (*) The network debugger is currently using 240 bytes of RAM.
+                The linker can automatically decrease this size to a minimum of 13 bytes,
+                as necessary, with a decrease in network debugger messaging performance.
+        NVRAM Signature  = 0000 @ 4000 .. 4001
+
+Buffer Configuration Summary:
+
+        Application input buffers: 3 at 42 bytes
+        Application output buffers: 2 (normal) + 0 (prio) at 42 bytes
+        Network input buffers: 7 at 66 bytes
+        Network output buffers: 2 (normal) + 0 (prio) at 66 bytes
+
+System Configuration Summary:
+
+        Domains: 1 at 15 bytes each
+        Addresses: 15 at 5 bytes each
+        Aliases: 6 at 4 bytes each
+
+
+End of Link Statistics
+                             LIST OF SEGMENTS
+
+ * FILE *                        * ROM *           * RAM *         * NVRAM *
+ Type Name                   From  To   Len    From  To   Len    From  To   Len
+
+C:\lm\Source\Riken\riken\Development\IM\riken.no:
+  Rel larva_patch             --   --   --      --   --   --     4002 4012 0011
+  Rel * Unnamed *             --   --   --      --   --   --     F024 F028 0005
+  Rel * Unnamed *             --   --   --      --   --   --     F029 F02D 0005
+  Rel %nvoNstate              --   --   --     EFFE EFFF 0002     --   --   -- 
+  Rel %nvoConc                --   --   --     EFFA EFFD 0004     --   --   -- 
+  Rel %nviComand              --   --   --     EFDB EFF9 001F     --   --   -- 
+  Rel %nvoComand              --   --   --     EFBC EFDA 001F     --   --   -- 
+  Rel %nvoAlarmS              --   --   --     EFBA EFBB 0002     --   --   -- 
+  Rel %nvoFaultS              --   --   --     EFB8 EFB9 0002     --   --   -- 
+  Rel %nvoGasName             --   --   --     EF99 EFB7 001F     --   --   -- 
+  Rel %nvoAlarm1              --   --   --     E7FC E7FF 0004     --   --   -- 
+  Rel %nvoAlarm2              --   --   --     E7F8 E7FB 0004     --   --   -- 
+  Rel %nvoError               --   --   --     E7F6 E7F7 0002     --   --   -- 
+  Rel %nvoFault               --   --   --     E7F2 E7F5 0004     --   --   -- 
+  Rel %nvoGasConc             --   --   --     E7EE E7F1 0004     --   --   -- 
+  Rel %nvoMaint               --   --   --     E7EA E7ED 0004     --   --   -- 
+  Rel %nvoState               --   --   --     E7E8 E7E9 0002     --   --   -- 
+  Rel %nvoWarn                --   --   --     E7E4 E7E7 0004     --   --   -- 
+  Rel %nvoObjRequest          --   --   --     E7DE E7E3 0006     --   --   -- 
+  Rel %nvoAl1lev              --   --   --     E7DA E7DD 0004     --   --   -- 
+  Rel %nvoAl2lev              --   --   --     E7D6 E7D9 0004     --   --   -- 
+  Rel %nvoState1              --   --   --     E7D4 E7D5 0002     --   --   -- 
+  Rel %nvoHertBeat            --   --   --     EF97 EF98 0002     --   --   -- 
+  Rel %nciMinSendTM           --   --   --      --   --   --     F7FB F7FC 0002
+  Rel %nciMaxSendTM           --   --   --      --   --   --     F7F9 F7FA 0002
+  Rel %nciMinSendTI           --   --   --      --   --   --     F7F7 F7F8 0002
+  Rel %nciMaxSendTI           --   --   --      --   --   --     F7F5 F7F6 0002
+  Rel %nvoState2              --   --   --     E7D2 E7D3 0002     --   --   -- 
+  Rel %nciAlaSetTime          --   --   --     E7D0 E7D1 0002     --   --   -- 
+  Rel %nciAliveInterval       --   --   --     E7CE E7CF 0002     --   --   -- 
+  Rel %nciLsdMinDelta         --   --   --     E7CC E7CD 0002     --   --   -- 
+  Rel %nciMaxSendTime         --   --   --     E7CA E7CB 0002     --   --   -- 
+  Rel %nciMinSendTime         --   --   --     E7C8 E7C9 0002     --   --   -- 
+  Rel %nciRelRstMode          --   --   --     E7C6 E7C7 0002     --   --   -- 
+  Rel %nciRelTimeout          --   --   --     E7C4 E7C5 0002     --   --   -- 
+  Rel %nviRelay1              --   --   --     E7C3 E7C3 0001     --   --   -- 
+  Rel %nviRelay2              --   --   --     E7C2 E7C2 0001     --   --   -- 
+  Rel %nviRelay3              --   --   --     E7C1 E7C1 0001     --   --   -- 
+  Rel %nviReset               --   --   --     EF96 EF96 0001     --   --   -- 
+  Rel %adr_nt                 --   --   --     EF95 EF95 0001     --   --   -- 
+  Rel %adr_77                 --   --   --     EF94 EF94 0001     --   --   -- 
+  Rel %state_bf               --   --   --     EF90 EF93 0004     --   --   -- 
+  Rel %state_bf_b             --   --   --     EF8C EF8F 0004     --   --   -- 
+  Rel %data_bf                --   --   --     EF88 EF8B 0004     --   --   -- 
+  Rel %data_bf_b              --   --   --     EF84 EF87 0004     --   --   -- 
+  Rel %ui_trb_bf              --   --   --     EF64 EF83 0020     --   --   -- 
+  Rel %ui_trb_bf_b            --   --   --     EF44 EF63 0020     --   --   -- 
+  Rel %ui_gas_name            --   --   --     EF3A EF43 000A     --   --   -- 
+  Rel %ui_gas_name_b          --   --   --     EF30 EF39 000A     --   --   -- 
+  Rel %ui_tx_cnt              --   --   --     EF2F EF2F 0001     --   --   -- 
+  Rel %ui_tx_cmd              --   --   --     EF2E EF2E 0001     --   --   -- 
+  Rel %ui_four_cnt            --   --   --     EF2D EF2D 0001     --   --   -- 
+  Rel %ui_1sec_cnt            --   --   --     EF2C EF2C 0001     --   --   -- 
+  Rel %tx_lamp_timer          --   --   --     EF2B EF2B 0001     --   --   -- 
+  Rel %nviObjRequest          --   --   --     E7BE E7C0 0003     --   --   -- 
+  Rel %rx_buf                 --   --   --     E77E E7BD 0040     --   --   -- 
+  Rel %rx_lamp_timer          --   --   --     EF2A EF2A 0001     --   --   -- 
+  Rel %rx_num                 --   --   --     EF29 EF29 0001     --   --   -- 
+  Rel %dg1                    --   --   --     EF28 EF28 0001     --   --   -- 
+  Rel %as2                    --   --   --     EF26 EF27 0002     --   --   -- 
+  Rel %quic_out_fl_state      --   --   --     EF25 EF25 0001     --   --   -- 
+  Rel %quic_out_fl_data       --   --   --     EF24 EF24 0001     --   --   -- 
+  Rel %ui_quic_out_hertbeat   --   --   --     EF23 EF23 0001     --   --   -- 
+  Rel %denst_ok_fl            --   --   --     EF22 EF22 0001     --   --   -- 
+  Rel %tr_ng_fl               --   --   --     EF21 EF21 0001     --   --   -- 
+  Rel %tr_ng_cnt              --   --   --     EF20 EF20 0001     --   --   -- 
+  Rel %min_state_fl           --   --   --     EF1F EF1F 0001     --   --   -- 
+  Rel %min_data_fl            --   --   --     EF1E EF1E 0001     --   --   -- 
+  Rel %float_buf              --   --   --     EF1A EF1D 0004     --   --   -- 
+  Rel %nv_stat                --   --   --     EF18 EF19 0002     --   --   -- 
+  Rel %nv_sec                 --   --   --     EF16 EF17 0002     --   --   -- 
+  Rel %nv_min_send_state      --   --   --     EF14 EF15 0002     --   --   -- 
+  Rel %nv_max_send_state      --   --   --     EF12 EF13 0002     --   --   -- 
+  Rel %nv_min_send_data       --   --   --     EF10 EF11 0002     --   --   -- 
+  Rel %nv_max_send_data       --   --   --     EF0E EF0F 0002     --   --   -- 
+  Rel WHEN1                   --   --   --      --   --   --     4013 4038 0026
+  Rel WHEN2                   --   --   --      --   --   --     4039 403C 0004
+  Rel WHEN3                   --   --   --      --   --   --     403D 404D 0011
+  Rel WHEN4                   --   --   --      --   --   --     404E 405E 0011
+  Rel WHEN5                   --   --   --      --   --   --     405F 4063 0005
+  Rel WHEN6                   --   --   --      --   --   --     4064 4068 0005
+  Rel WHEN7                   --   --   --      --   --   --     4069 406D 0005
+  Rel WHEN8                   --   --   --      --   --   --     406E 40D2 0065
+  Rel WHEN9                   --   --   --      --   --   --     40D3 40E8 0016
+  Rel WHEN10                  --   --   --      --   --   --     40E9 4218 0130
+  Rel WHEN11                  --   --   --      --   --   --     4219 4234 001C
+  Rel WHEN12                  --   --   --      --   --   --     4235 423C 0008
+  Rel WHEN13                  --   --   --      --   --   --     423D 424B 000F
+  Rel WHEN14                  --   --   --      --   --   --     424C 425A 000F
+  Rel WHEN15                  --   --   --      --   --   --     425B 4269 000F
+  Rel WHEN16                  --   --   --      --   --   --     426A 4278 000F
+  Rel WHEN17                  --   --   --      --   --   --     4279 4287 000F
+  Rel WHEN18                  --   --   --      --   --   --     4288 429B 0014
+  Rel WHEN19                  --   --   --      --   --   --     429C 42A3 0008
+  Rel WHEN20                  --   --   --      --   --   --     42A4 42E1 003E
+  Rel %tr_denst               --   --   --      --   --   --     42E2 4583 02A2
+  Rel %tr_error               --   --   --      --   --   --     4584 45AF 002C
+  Rel %sum_io_in              --   --   --      --   --   --     45B0 4667 00B8
+  Rel %rx_lamp_on             --   --   --      --   --   --     4668 4671 000A
+  Rel %max_min_state          --   --   --      --   --   --     4672 46A9 0038
+  Rel %max_min_data           --   --   --      --   --   --     46AA 46E1 0038
+  Rel %max_hertbeat           --   --   --      --   --   --     46E2 4700 001F
+  Rel %trans_state            --   --   --      --   --   --     4701 4784 0084
+  Rel %trans_data             --   --   --      --   --   --     4785 47FF 007B
+  Rel %trb_data               --   --   --      --   --   --     4800 48B0 00B1
+  Rel %tx_lamp_on             --   --   --      --   --   --     48B1 48BA 000A
+  Rel %dg1_to_as2             --   --   --      --   --   --     48BB 4910 0056
+  Rel %as2_to_dg1             --   --   --      --   --   --     4911 494D 003D
+  Rel %sum_calc               --   --   --      --   --   --     494E 4979 002C
+  Rel %io_init                --   --   --      --   --   --     497A 499E 0025
+  Rel %tx_set                 --   --   --      --   --   --     499F 49C6 0028
+  Rel %command_op             --   --   --      --   --   --     49C7 4A74 00AE
+  Rel APINIT                  --   --   --      --   --   --     4A75 4B12 009E
+  Rel get_declared_nv_lengt   --   --   --      --   --   --     4B13 4B15 0003
+  Rel SIDATA                  --   --   --      --   --   --     4F2B 515E 0234
+  Rel DBGSIG                  --   --   --      --   --   --     4B16 4BFE 00E9
+  Rel _%70DLNDV%INIT          --   --   --      --   --   --     4BFF 4C04 0006
+  Rel %nv_send_hertbeat       --   --   --     EF0C EF0D 0002     --   --   -- 
+  Rel %tx_buf                 --   --   --     E73E E77D 0040     --   --   -- 
+  Rel %nciMaxSendHB           --   --   --      --   --   --     F7F3 F7F4 0002
+  Rel * Unnamed *             --   --   --      --   --   --     F02E F158 012B
+  Rel * Unnamed *             --   --   --      --   --   --     0000 0000 0001
+  Abs * Unnamed *             --   --   --      --   --   --     F000 F023 0024
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\GEN.LIB(D_LARVA6):
+  Rel _larva_entry            --   --   --      --   --   --     4C05 4CED 00E9
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(BITSET):
+  Rel %set_bit                --   --   --      --   --   --     4CEE 4CF6 0009
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(BITCLR):
+  Rel %clr_bit                --   --   --      --   --   --     4CF7 4D01 000B
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\GEN.LIB(IO_SEFN4):
+  Rel _serial_output          --   --   --      --   --   --     4D02 4D34 0033
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\GEN.LIB(IO_SEFN3):
+  Rel _serial_input           --   --   --      --   --   --     4D35 4D81 004D
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(FLFML):
+  Rel %fl_from_long           --   --   --      --   --   --     4D82 4DC4 0043
+  Rel %fl_from_slong          --   --   --      --   --   --     4DC5 4DCD 0009
+  Rel %fl_from_ulong          --   --   --      --   --   --     4DCE 4DD6 0009
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(FLTEN):
+  Rel %fl_ten                 --   --   --      --   --   --     4DD7 4DDA 0004
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\GEN.LIB(D_LARVA1):
+  Rel _larva_reset            --   --   --      --   --   --     4DDB 4DE9 000F
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\GEN.LIB(D_LARVA2):
+  Rel _larva_resend_count     --   --   --      --   --   --     F7E1 F7F2 0012
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(BITS):
+  Rel mask_table              --   --   --      --   --   --     4DEA 4E03 001A
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\GEN.LIB(IO_SEFN5):
+  Rel _serial_sub1            --   --   --      --   --   --     4E04 4E1D 001A
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(FLNORM):
+  Rel %fl_normalize           --   --   --      --   --   --     4E1E 4E5F 0042
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(FLFMINTL):
+  Rel %fl_fm_intl             --   --   --      --   --   --     4E60 4EC4 0065
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(UMPISZER):
+  Rel %ump_is_zero            --   --   --      --   --   --     4EC5 4ED2 000E
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(FLTOINTL):
+  Rel %fl_to_intl             --   --   --      --   --   --     4ED3 4F16 0044
+
+C:\PROGRAM FILES (X86)\LONWORKS\IMAGES\EXTARITH.LIB(UMPLSHIF):
+  Rel %ump_lshift             --   --   --      --   --   --     4F17 4F2A 0014
+                           SYMBOLS BY ADDRESS
+
+#   0001 _idem_dup                      #   03FF _timer_sset                    
+#   0002 _tx_by_addr                    #   0403 _timer_sset_repeat             
+#   0005 _larva_break                   #   0418 _timer_get                     
+#   0009 _larva_suspend                 #   041F timers_off                     
+#   000D _push1                         #   0429 _unpack_nibs                   
+#   000F _push                          #   0432 _memcpy                        
+#   0013 _pop1                          #   0435 _memcpy1                       
+#   0015 _pop                           #   043D _memset8                       
+#   0019 _alloc                         #   0444 _memset                        
+#   001E _dealloc                       #   0445 _memset1                       
+#   0020 _drop_n                        #   044E _save_ptrs                     
+#   0024 _drop_n_return_1               #   0457 _restore_ptrs                  
+#   0026 _drop_n_preserve_1             #   045F _register_call                 
+#   002A _drop_n_return_2               #   0465 _add_8_16                      
+#   002C _drop_n_preserve_2             #   04B0 delay_1msec                    
+#   003E _get_sp                        #   04B6 msec_delay                     
+#   0040 _query_stats                   #   04B9 delay                          
+#   0046 _add_8_16f                     #   04BB scaled_delay                   
+#   0046 _bump_ptr                      #   04C4 _iteration16                   
+#   0048 _inc16                         #   04F2 flush_cancel                   
+#   004B _xch_inc_xch                   #   04F4 _sys_flag_clear                
+#   004E _sign_extend16                 #   04F7 _free_rcvtx_by_domain          
+#   0054 _dec16                         #   0502 _sys_flag_set                  
+#   005B _ldP0_fetchl                   #   0521 _mip_L4                        
+#   007B watchdog_update                #   0522 _mip_L5                        
+#   007D watchdog_update_old            #   0546 _mip_L1                        
+#   0080 _new_binding_constraints       #   0567 _mip_L2                        
+#   0081 _cpu_halt_check                #   057A _set_typeout                   
+#   0086 _larva_L1                      #   059F _mip_T1                        
+#   0093 _larva_L2                      #   05D5 _get_address                   
+#   00AF node_reset                     #   05F4 _get_domain                    
+#   00AF _node_reset                    #   0674 _memcmp1                       
+#   00BE _arb_presf                     #   068B _index_to_addr                 
+#   00BF _r_shift8_7                    #   0693 _eeprom_write                  
+#   00C0 _r_shift8_6                    #   0695 _eeprom_far_write              
+#   00C1 _r_shift8_5                    #   0695 _ee_write_int                  
+#   00C2 _r_shift8_4                    #   0698 _eeprom_write_long             
+#   00C3 _r_shift8_3                    #   069A _eeprom_far_write_long         
+#   0100 _larva_version                 #   069A _ee_write_long                 
+#   0191 _mip_L6                        #   06A8 _ee_memcpy_uncond              
+#   0348 _timer_update                  #   06AC _ee_memcpy                     
+#   0378 _app_watchdog                  #   06AC _memcpy8                       
+#   0381 _rel_sem2                      #   06AF _get_error_log                 
+#   0386 _get_sem2                      #   06BC _sys_error_log                 
+#   03C4 _timer_events                  #   06BF error_log                      
+#   03E4 _timer_expires                 #   06D0 _raw_error_log                 
+#   03F1 _timer_expires_any             #   071E _change_state                  
+#   03F4 _timer_off                     #   074F _disable_callbacks             
+#   03F8 _timer_mset                    #   0752 _enable_callbacks              
+#   03FA _timer_mset_repeat             #   075E _check_configured              
+#   07CF _adjust_checksum1              #   0B7F _less16s                       
+#   07EA _get_appsum_location           #   0B82 _equal8                        
+#   08FA post_events                    #   0B84 _equal16                       
+#   0919 set_eeprom_lock                #   0B86 _lognot16                      
+#   0A28 abs8_twice                     #   0B87 _lognot8                       
+#   0A2F _lshift8by2_add16              #   0B89 _log16                         
+#   0A31 _lshift8by1_add16              #   0B8A _log8                          
+#   0A33 _lshift8_add16                 #   0B8F _r_shift8                      
+#   0A35 _lshift16_add16                #   0B97 _r_shift8s                     
+#   0A38 _adds_8_16                     #   0BA0 _l_shift8s                     
+#   0A3A _add16                         #   0BA0 _l_shift8                      
+#   0A41 _mul8l                         #   0BBB _l_shift16s                    
+#   0A43 _muls_8_16                     #   0BBB _l_shift16                     
+#   0A46 _mul_8_16                      #   0BC7 _r_shift16                     
+#   0A48 _mul16                         #   0BD6 _r_shift16s                    
+#   0A48 _mul16s                        #   0BE5 _l_shift8_7                    
+#   0A59 _mul8                          #   0BE6 _l_shift8_6                    
+#   0A62 _div32_16_core                 #   0BE7 _l_shift8_5                    
+#   0A98 _div32_16                      #   0BE8 _l_shift8_4                    
+#   0A9D _div8                          #   0BE9 _l_shift8_3                    
+#   0AA5 _div16                         #   0BED random                         
+#   0AB7 _div8s                         #   0BF1 _msg_free                      
+#   0ABF _mod8s                         #   0BFE _resp_free                     
+#   0AC9 _abs8                          #   0C0B _clear_apps_flags              
+#   0AD0 _mod16                         #   0C0F _msg_alloc_priority            
+#   0AD7 _div16s                        #   0C11 _msg_alloc                     
+#   0AE2 _mod16s                        #   0C21 _resp_alloc                    
+#   0AF0 _max8                          #   0C40 _msg_send                      
+#   0AF5 _min8                          #   0C40 _resp_send                     
+#   0AFA _max8s                         #   0C71 _msg_alloc_wait                
+#   0AFF _min8s                         #   0C7E _msg_cancel                    
+#   0B05 _mod8                          #   0C7E _resp_cancel                   
+#   0B0E _max16                         #   0CA0 _bound_mt                      
+#   0B13 _min16                         #   0CC5 _wink                          
+#   0B18 _max16s                        #   0CC8 _msg_receive                   
+#   0B1D _min16s                        #   0CCA _msg_arrives                   
+#   0B25 _sub16                         #   0CCC _msg_code_arrives              
+#   0B31 _mul8ls                        #   0CDB _set_apps_flags                
+#   0B3A _abs16                         #   0CDF _msg_fails                     
+#   0B3E _minus16s                      #   0CE2 _msg_completes                 
+#   0B44 _not16                         #   0CE5 _msg_succeeds                  
+#   0B49 _and16                         #   0CE8 _resp_receive                  
+#   0B4E _or16                          #   0CEC _resp_arrives                  
+#   0B53 _xor16                         #   0D26 _msg_data_blockset             
+#   0B58 _gequ8s                        #   0D63 _msg_priority_set              
+#   0B5E _gequ16s                       #   0D6E _resp_code_set                 
+#   0B65 _less16                        #   0D70 _resp_data_set                 
+#   0B69 _less8                         #   0D78 _msg_code_set                  
+#   0B6D _signs_differ16                #   0D7A _msg_data_set                  
+#   0B73 _gequ16                        #   0D8B _msg_auth_set                  
+#   0B77 _gequ8                         #   0D8F _msg_service_set               
+#   0B7C _less8s                        #   0D93 _msg_tag_set                   
+#   0D93 _msg_tag_set1                  #   1649 _alias_count                   
+#   0D98 _msg_byte_set                  #   164D _nv_count                      
+#   0D98 _msg_addr_set                  #   1651 _nv_get_cnfg_p_pri             
+#   0D9C _msg_out_set                   #   165E _nv_get_cnfg_p                 
+#   0DCA _msg_code_get                  #   166A _nv_get_cnfg_p1                
+#   0DCA _msg_code_get_ex               #   1672 _nv_get_alias_p                
+#   0DCC _msg_data_get                  #   1688 _nv_get_fixed_p                
+#   0DD0 _msg_auth_get                  #   1830 _get_auth_std                  
+#   0DD4 _msg_service_get               #   1875 _get_rcvtx_p                   
+#   0DD9 _msg_byte_get                  #   1904 _nm_set_nk                     
+#   0DD9 _msg_addr_get                  #   19D8 make_apdu_p                    
+#   0DDE _msg_in_get                    #   19F2 _service_pin_send              
+#   0E0D _msg_len_get_ex                #   19F3 _nm_service_send               
+#   0E0D _msg_len_get                   #   19FA _bitshift_input                
+#   0E12 _msg_data_blockget             #   1A1B _init_baud                     
+#   0F4B _nv_update_int                 #   1A1F _A_delay_pd                    
+#   0F4C _nv_update_int_offset          #   1A21 _A_delay                       
+#   0F51 _nv_update_long                #   1A22 _A_delay_b                     
+#   0F52 _nv_update_long_offset         #   1A28 _sio_load_delay                
+#   0F57 _nv_update                     #   1A31 set_base2p                     
+#   0F5C _nv_update_request1            #   1A36 set_base_p                     
+#   0F5C _nv_poll                       #   1A3B _bit_input                     
+#   0F5C _nv_update_request             #   1A3D _nibble_input                  
+#   0F6C _nv_poll_all                   #   1A51 _byte_input                    
+#   0F72 _nv_array_poll                 #   1A55 _leveldetect_input             
+#   0FAC _nv_update_occurs              #   1A6B _init_io_pins                  
+#   0FAD _nv_array_update_occurs        #   1A97 _io_direction_hi               
+#   0FF7 _nv_update_fails               #   1A97 _io_direction_hi2              
+#   0FF8 _nv_array_update_fails         #   1A99 _io_direction_lo               
+#   0FFD _nv_update_succeeds            #   1A9B _bit_output_ext2               
+#   0FFE _nv_array_update_succeeds      #   1A9B _bit_output_ext                
+#   1001 _nv_update_completes           #   1A9F _bit_output_hi                 
+#   1002 _nv_array_update_completes     #   1AA1 _bit_output_lo2                
+#   1012 _bound_nv                      #   1AA3 _bit_output_lo1                
+#   1012 _bound_nv1                     #   1AAB _nibble_output                 
+#   102B _io_change_init                #   1AB3 _byte_output                   
+#   104B _io_changes_to                 #   1AC7 _set_tco_p                     
+#   1056 _io_changes_by                 #   1ADA _loader_prep                   
+#   106A _io_changes                    #   1B07 _pulsewidth_output             
+#   106F _io_update_occurs              #   1B13 _triggered_count_output        
+#   1085 _io_input_value                #   1B13 _frequency_output              
+#   108C application_restart            #   1B2B _oneshot_output                
+#   10AE _preempt                       #   1B30 _triac_pulse_output            
+#   10E3 offline_confirm                #   1B38 _triac_output                  
+#   10F1 _offline                       #   1B38 _triac_level_output            
+#   10FF _online                        #   1B3A _loader_go                     
+#   1104 online_confirm                 #   1B45 _pulsecount_output             
+#   1141 go_offline                     #   1B87 _totalize_input                
+#   1146 flush                          #   1B93 _ontime_input                  
+#   1151 _flush_completes               #   1B93 _pulsecount_input              
+#   1183 _sleep                         #   1B93 _period_input                  
+#   1198 retrieve_xcvr_status           #   1BC1 _quadrature_input              
+#   1BEC _select_mux                    #   34C2 _bitshift_output               
+#   1BF0 _alter_icntrl_g                #   34FB _bitshift_setup                
+#   1BF8 _select_input_fn               #   352A _get_si_data_ptr               
+#   1C17 _io_set_clock                  #   362C siuspi_init                    
+#   1C29 _init_timer_counter1           #   363D siu_writeloop                  
+#   1C2B _init_timer_counter2           #   364D siuspi_cmp_a3                  
+#   1C78 _parallel_output_request       #   364F siuspi_read_a3                 
+#   1C7A clear_pio_request              #   3651 siuspi_read_a3nc               
+#   1C7F _parallel_input_ready          #   3675 siuspi_idlewait                
+#   1CAB _parallel_output_ready         #   3680 siuspi_idledecs                
+#   1CB9 _parallel_input                #   3686 siuspi_initw3                  
+#   1CCC _parallel_output               #   3688 siuspi_write3                  
+#   1E2B _mac_L1                        #   3692 siuspi_initw4                  
+#   2104 _scheduler_loop                #   3694 siuspi_write4                  
+#   235C _larva_L3                      #   3699 siuspi_wren                    
+#   26B0 _net_mgmt_processing           #   369A siuspi_inst1                   
+#   2740 _update_address                #   36C7 siuspi_rdsr                    
+#   27A0 _self_installation             #   36DF crc16_ccitt                    
+#   27A2 _calculate_cnfg_checksum       #   3981 _pushd1                        
+#   27AA _leave_indexed_domain          #   3983 _pushd                         
+#   282D chksum_recalc_mode             #   3989 _popd1                         
+#   2BA6 _build_status                  #   398B _popd                          
+#   2C21 clear_status                   #   3991 preemption_mode                
+#   2D15 _get_prit_p                    #   3999 _nv_update_request_all         
+#   2D24 _get_prt_p                     #   399F _nv_array_update_request       
+#   3008 _set_ram_ptrs                  #   39B0 service_pin_msg_send           
+#   305E _checksum_generate             #   39BB service_pin_state              
+#   3259 set_irq_debugging              #   39C4 muldiv24                       
+#   32DF io_set_isr                     #   39FD muldiv24s                      
+#   32FE io_idis                        #   3A13 crc16                          
+#   3300 io_iena                        #   3A32 crc8                           
+#   3307 io_mask_isr                    #   3A46 _neurowire_inv_master          
+#   331A io_itc_cond                    #   3A81 _muxbus_read                   
+#   331F io_itc_clear                   #   3A93 _muxbus_reread                 
+#   3324 io_iaccess                     #   3A9E _muxbus_write                  
+#   3335 io_irelease                    #   3AAD _muxbus_rewrite                
+#   333A io_iperiod                     #   3AB8 _dualslope_input               
+#   336D _io_sci_parity                 #   3AD9 _dualslope_start               
+#   3377 _io_scispi_output_ready        #   3AE5 _edgelog_input                 
+#   3380 _io_scispi_input_ready         #   3B20 _io_set_clock_x2               
+#   3384 _io_sci_get_error              #   3B28 io_edgelog_preload             
+#   3387 _io_spi_get_error              #   3B37 %fl_cmp                        
+#   3392 _io_spi_init                   #   3B69 %fl_eq                         
+#   33AA _io_spi_clock                  #   3B6B %fl_gt                         
+#   33C9 _io_scispi_abort               #   3B6D %fl_lt                         
+#   33D7 _io_sci_init                   #   3B73 %fl_ne                         
+#   33E9 _io_sci_baud                   #   3B75 %fl_ge                         
+#   3404 _io_sci_set_buffer_in          #   3B78 %fl_le                         
+#   3408 _io_sci_set_buffer_out         #   3B80 %fl_zero                       
+#   343A _io_spi_set_buffer             #   3B84 %fl_sub                        
+#   34B3 _eefar_init                    #   3B8F %fl_add                        
+#   34BC _extended_version_number       #   3CD8 %fl_mul                        
+#   3D47 %fl_div                        .   4138 WHEN10%3                       
+#   3E21 %ump_cmp                       .   413B WHEN10%1                       
+#   3E39 %fl_neg                        .   4144 WHEN10%6                       
+#   3E49 %fl_copy                       .   4151 WHEN10%8                       
+#   3E4B %fl_copy1                      .   4173 WHEN10%9                       
+#   3E5C %fl_arg2_zero                  .   41AD WHEN10%11                      
+#   3E5E %fl_arg3_zero                  .   41C9 WHEN10%12                      
+#   3E6F %fl_compare_exp                .   41CC WHEN10%10                      
+#   3E7C %fl_adjust_exp                 .   41F5 WHEN10%14                      
+#   3E94 %fl_setup                      .   4211 WHEN10%15                      
+#   3EFC %fl_finish                     .   4211 WHEN10%7                       
+#   3FFF _image_end                     .   4211 WHEN10%13                      
+#   4000 _extended_start                .   4217 WHEN10%16                      
+.   4002 larva_patch                    .   4219 WHEN11                         
+.   4013 WHEN1                          .   422D WHEN11%0                       
+.   4021 WHEN1%0                        .   4233 WHEN11%1                       
+.   4025 WHEN1%1                        .   4235 WHEN12                         
+.   4033 WHEN1%2                        .   423B WHEN12%0                       
+.   4037 WHEN1%4                        .   423D WHEN13                         
+.   4037 WHEN1%3                        .   424A WHEN13%0                       
+.   4039 WHEN2                          .   424C WHEN14                         
+.   403B WHEN2%0                        .   4259 WHEN14%0                       
+.   403D WHEN3                          .   425B WHEN15                         
+.   404C WHEN3%0                        .   4268 WHEN15%0                       
+.   404C WHEN3%1                        .   426A WHEN16                         
+.   404E WHEN4                          .   4277 WHEN16%0                       
+.   405D WHEN4%0                        .   4279 WHEN17                         
+.   405D WHEN4%1                        .   4286 WHEN17%0                       
+.   405F WHEN5                          .   4288 WHEN18                         
+.   4062 WHEN5%0                        .   4295 WHEN18%0                       
+.   4064 WHEN6                          .   429A WHEN18%2                       
+.   4067 WHEN6%0                        .   429A WHEN18%1                       
+.   4069 WHEN7                          .   429C WHEN19                         
+.   406C WHEN7%0                        .   42A2 WHEN19%0                       
+.   406E WHEN8                          .   42A4 WHEN20                         
+.   4081 WHEN8%0                        .   42E0 WHEN20%3                       
+.   4084 WHEN8%1                        .   42E0 WHEN20%1                       
+.   408F WHEN8%2                        .   42E0 WHEN20%0                       
+.   40A8 WHEN8%4                        .   42E0 WHEN20%2                       
+.   40C1 WHEN8%6                        #   42E2 %tr_denst                      
+.   40C8 WHEN8%7                        .   4334 %tr_denst%1                    
+.   40D1 WHEN8%3                        .   4334 %tr_denst%2                    
+.   40D1 WHEN8%8                        .   4337 %tr_denst%0                    
+.   40D1 WHEN8%5                        .   4384 %tr_denst%8                    
+.   40D3 WHEN9                          .   43C7 %tr_denst%11                   
+.   40E1 WHEN9%0                        .   43D9 %tr_denst%10                   
+.   40E7 WHEN9%1                        .   43D9 %tr_denst%13                   
+.   40E9 WHEN10                         .   43D9 %tr_denst%12                   
+.   40FD WHEN10%0                       .   43DF %tr_denst%9                    
+.   411B WHEN10%2                       .   43E1 %tr_denst%14                   
+.   412F WHEN10%4                       .   4424 %tr_denst%17                   
+.   4138 WHEN10%5                       .   4424 %tr_denst%16                   
+.   442A %tr_denst%7                    .   474F %trans_state%1                 
+.   442A %tr_denst%6                    .   4753 %trans_state%4                 
+.   442A %tr_denst%15                   .   476B %trans_state%6                 
+.   442D %tr_denst%5                    .   4772 %trans_state%7                 
+.   4476 %tr_denst%21                   .   477B %trans_state%5                 
+.   44E1 %tr_denst%23                   .   4783 %trans_state%8                 
+.   44E1 %tr_denst%24                   #   4785 %trans_data                    
+.   44E7 %tr_denst%20                   .   47C5 %trans_data%0                  
+.   44E7 %tr_denst%19                   .   47DF %trans_data%1                  
+.   44E7 %tr_denst%22                   .   47F6 %trans_data%2                  
+.   44F7 %tr_denst%25                   .   47FE %trans_data%3                  
+.   44F7 %tr_denst%18                   #   4800 %trb_data                      
+.   44FA %tr_denst%4                    .   481B %trb_data%0                    
+.   4537 %tr_denst%29                   .   4828 %trb_data%1                    
+.   457C %tr_denst%32                   .   4850 %trb_data%3                    
+.   457C %tr_denst%31                   .   485C %trb_data%4                    
+.   4582 %tr_denst%26                   .   4874 %trb_data%6                    
+.   4582 %tr_denst%3                    .   4881 %trb_data%7                    
+.   4582 %tr_denst%27                   .   4899 %trb_data%9                    
+.   4582 %tr_denst%30                   .   48A6 %trb_data%10                   
+.   4582 %tr_denst%28                   .   48AF %trb_data%2                    
+.   4582 %tr_denst%33                   .   48AF %trb_data%11                   
+#   4584 %tr_error                      .   48AF %trb_data%8                    
+.   45AE %tr_error%1                    .   48AF %trb_data%5                    
+.   45AE %tr_error%0                    .   48AF %trb_data%12                   
+#   45B0 %sum_io_in                     #   48B1 %tx_lamp_on                    
+.   45F1 %sum_io_in%0                   .   48B9 %tx_lamp_on%0                  
+.   460B %sum_io_in%2                   #   48BB %dg1_to_as2                    
+.   4611 %sum_io_in%1                   .   48D2 %dg1_to_as2%0                  
+.   4661 %sum_io_in%3                   .   48D9 %dg1_to_as2%1                  
+.   4661 %sum_io_in%4                   .   48EE %dg1_to_as2%2                  
+.   4665 %sum_io_in%5                   .   48F4 %dg1_to_as2%3                  
+#   4668 %rx_lamp_on                    .   4909 %dg1_to_as2%4                  
+.   4670 %rx_lamp_on%0                  .   490F %dg1_to_as2%5                  
+#   4672 %max_min_state                 .   490F %dg1_to_as2%6                  
+.   468A %max_min_state%0               #   4911 %as2_to_dg1                    
+.   4690 %max_min_state%1               .   4927 %as2_to_dg1%0                  
+.   46A8 %max_min_state%3               .   492C %as2_to_dg1%1                  
+.   46A8 %max_min_state%2               .   4940 %as2_to_dg1%2                  
+#   46AA %max_min_data                  .   4945 %as2_to_dg1%3                  
+.   46C2 %max_min_data%0                .   494C %as2_to_dg1%4                  
+.   46C8 %max_min_data%1                #   494E %sum_calc                      
+.   46E0 %max_min_data%2                .   4954 %sum_calc%0                    
+.   46E0 %max_min_data%3                .   4970 %sum_calc%1                    
+#   46E2 %max_hertbeat                  .   4978 %sum_calc%2                    
+.   46FA %max_hertbeat%0                #   497A %io_init                       
+.   46FF %max_hertbeat%2                .   498B %io_init%0                     
+.   46FF %max_hertbeat%1                .   499D %io_init%2                     
+#   4701 %trans_state                   .   499D %io_init%1                     
+.   4727 %trans_state%0                 #   499F %tx_set                        
+.   473F %trans_state%2                 .   49C5 %tx_set%0                      
+.   4746 %trans_state%3                 #   49C7 %command_op                    
+.   49CB %command_op%0                  c   8000 _evn_byte_2                    
+.   49E4 %command_op%2                  c   8000 _extended_onchip_eeprom        
+.   49EA %command_op%1                  c   8000 _feature_set_2                 
+.   49EF %command_op%3                  c   8000 _larva_clear_off               
+.   4A0D %command_op%4                  #   8000 _programmable_driver_strength  
+.   4A2C %command_op%7                  c   8000 _programmable_lvi              
+.   4A52 %command_op%8                  c   8000 _sio_near                      
+.   4A57 %command_op%9                  c   8000 _size_sys_eevars               
+.   4A73 %command_op%11                 c   8000 _size_sys_ramvars              
+.   4A73 %command_op%6                  #   8000 _system_version_minor          
+.   4A73 %command_op%5                  #   8000 __max_transient_app            
+.   4A73 %command_op%10                 #   8000 __num_transient_app            
+.   4A75 APINIT                         c   8000 _const_mask                    
+.   4A7A APINITV                        c   8001 _ee_reserved_offset            
+.   4A86 WINK                           #   8001 _system_image_extensions       
+.   4A8B WINK%0                         c   8001 _sysimgext_proxy               
+.   4AB2 WINK%2                         c   8001 _sysimgext_phase               
+.   4AB2 WINK%1                         c   8001 _eevar_offset                  
+.   4AB4 RESET0                         c   8001 _sysimgext_nv_length_override  
+.   4AB7 RESET                          c   8001 _feature_set_1                 
+.   4B11 RESET%0                        #   8001 _stretched_triac_supported     
+#   4B13 get_declared_nv_length         c   8001 _size_proxy_route_index_entry  
+.   4B16 DBGSIG                         c   8001 _field_debug                   
+.   4BB7 TEVT                           c   8001 _memory_forwarding             
+.   4BFF _%70DLNDV%INIT                 #   8001 _oma                           
+.   4C02 _%70DLNDV%INITV                c   8001 _ram_test_power_up_only        
+#   4C05 _larva_entry                   c   8001 _sci_spi_supported             
+#   4C32 _larva_reset_notify            c   8001 _set_nv_length_valid           
+.   4C3B copy_from_stack                #   8001 _alternate_clocking            
+#   4CEE %set_bit                       c   8001 _extended_io_count             
+#   4CF7 %clr_bit                       #   8002 _nm_version                    
+#   4D02 _serial_output                 c   8002 _read_only_data_struct_version 
+#   4D35 _serial_input                  #   8002 _min_context4_multiplier       
+#   4D82 %fl_from_long                  #   8003 _sci_spi_features              
+#   4DC5 %fl_from_slong                 c   8003 _size_io_change_event          
+#   4DCE %fl_from_ulong                 c   8003 _extended_onchip_eedata        
+#   4DD7 %fl_ten                        c   8003 _size_nv_fix                   
+#   4DDB _larva_reset                   c   8003 _size_nv_cnfg                  
+.   4DEA mask_table                     c   8004 _size_evn                      
+.   4DF2 bit_setup                      c   8004 _size_timer                    
+#   4E04 _serial_sub1                   c   8004 _size_nv_alias                 
+.   4E16 _se_baud_t                     c   8005 _size_addr_tbl_entry           
+.   4E1A _se_baud_toc                   #   8008 _build_number                  
+#   4E1E %fl_normalize                  c   800C _size_proxy_route_entry        
+#   4E60 %fl_fm_intl                    c   800D _size_rcv_tx                   
+#   4EC5 %ump_is_zero                   c   800F _size_domain_entry             
+#   4ED3 %fl_to_intl                    c   8010 _evn_byte_3                    
+#   4F17 %ump_lshift                    c   8013 _evn_byte_4                    
+.   4F2B SIDATA                         c   8013 _system_version                
+c   8000 _sidata_last_eecode            c   801C _size_tx_ctl_blk               
+c   8000 _disable_dynamic_xcvr_config   #   8031 _nm_capabilities               
+c   8000 _evn_byte_1                    c   80BE _arbitrary_preempt_safe        
+#   80FF _nv_count_mask                 #   E948 _cpu_sync                      
+#   80FF _nv_all                        #   E94C nv_in_addr                     
+#   8100 _size_app_basepg               #   E954 _sys_stat                      
+#   811F _interrupt_capability          #   E96C ee_lock                        
+c   82BD _sysram_base_usage             #   E96D nsa_features                   
+.   E64E _larva_mem                     #   E96D nsa_relative                   
+#   E73E %tx_buf                        #   E97A %fl_error                      
+#   E77E %rx_buf                        #   E97B %fl_temp1                      
+#   E7BE %nviObjRequest                 #   E97B %s32_temp1                     
+#   E7C1 %nviRelay3                     #   E97F %s32_temp2                     
+#   E7C2 %nviRelay2                     #   E97F %fl_temp2                      
+#   E7C3 %nviRelay1                     #   E983 %s32_temp3                     
+#   E7C4 %nciRelTimeout                 #   E983 %fl_intl_temp                  
+#   E7C6 %nciRelRstMode                 #   E99B _last_retry_extra_time         
+#   E7C8 %nciMinSendTime                #   E9AF _sys_callback_address          
+#   E7CA %nciMaxSendTime                #   E9B1 _larva_L5                      
+#   E7CC %nciLsdMinDelta                #   E9B1 BASEPG3                        
+#   E7CE %nciAliveInterval              #   E9BC input_is_new                   
+#   E7D0 %nciAlaSetTime                 #   E9BC _dbg_input_is_new              
+#   E7D2 %nvoState2                     #   EF0C %nv_send_hertbeat              
+#   E7D4 %nvoState1                     #   EF0E %nv_max_send_data              
+#   E7D6 %nvoAl2lev                     #   EF10 %nv_min_send_data              
+#   E7DA %nvoAl1lev                     #   EF12 %nv_max_send_state             
+#   E7DE %nvoObjRequest                 #   EF14 %nv_min_send_state             
+#   E7E4 %nvoWarn                       #   EF16 %nv_sec                        
+#   E7E8 %nvoState                      #   EF18 %nv_stat                       
+#   E7EA %nvoMaint                      #   EF1A %float_buf                     
+#   E7EE %nvoGasConc                    #   EF1E %min_data_fl                   
+#   E7F2 %nvoFault                      #   EF1F %min_state_fl                  
+#   E7F6 %nvoError                      #   EF20 %tr_ng_cnt                     
+#   E7F8 %nvoAlarm2                     #   EF21 %tr_ng_fl                      
+#   E7FC %nvoAlarm1                     #   EF22 %denst_ok_fl                   
+#   E800 activate_service_led           #   EF23 %ui_quic_out_hertbeat          
+#   E801 _larva_flag                    #   EF24 %quic_out_fl_data              
+#   E80C _xcvr_mode                     #   EF25 %quic_out_fl_state             
+#   E83C msg_tag_index                  #   EF26 %as2                           
+#   E83C nv_in_index                    #   EF28 %dg1                           
+#   E84D ramQElemSizeIn                 #   EF29 %rx_num                        
+#   E84E ramQElemSizeOut                #   EF2A %rx_lamp_timer                 
+#   E856 qfree_out                      #   EF2B %tx_lamp_timer                 
+#   E85E qincoming                      #   EF2C %ui_1sec_cnt                   
+#   E862 qresponse                      #   EF2D %ui_four_cnt                   
+#   E878 _larva_L4                      #   EF2E %ui_tx_cmd                     
+#   E8C5 _mip_IF0                       #   EF2F %ui_tx_cnt                     
+#   E8C7 io_pin_event_data              #   EF30 %ui_gas_name_b                 
+#   E8CE input_value                    #   EF3A %ui_gas_name                   
+#   E8CE _dbg_input_value               #   EF44 %ui_trb_bf_b                   
+#   E8D0 _nv_array_index                #   EF64 %ui_trb_bf                     
+#   E8D0 nv_array_index                 #   EF84 %data_bf_b                     
+#   E8D1 io_pdata_imgs                  #   EF88 %data_bf                       
+#   E8D5 _io_gen_img                    #   EF8C %state_bf_b                    
+#   E939 _sys_flags                     #   EF90 %state_bf                      
+#   EF94 %adr_77                        .   F023 TX_CTRL                        
+#   EF95 %adr_nt                        #   F024 eeCustomMac                    
+#   EF96 %nviReset                      #   F024 read_only_data_2               
+#   EF97 %nvoHertBeat                   #   F029 read_only_data_3               
+#   EF99 %nvoGasName                    #   F029 eeNVCount                      
+#   EFB8 %nvoFaultS                     #   F02B eeSNVT2Ptr                     
+#   EFBA %nvoAlarmS                     #   F02E config_data                    
+#   EFBC %nvoComand                     #   F036 eeCommStart                    
+#   EFDB %nviComand                     #   F036 eeClock                        
+#   EFFA %nvoConc                       #   F037 eeAltClock                     
+#   EFFE %nvoNstate                     .   F047 DOMAIN                         
+#   F000 eeNeuronID                     #   F047 eeDomain                       
+#   F000 read_only_data                 #   F050 eeDomain0Key                   
+.   F008 DIRECTORY                      #   F05F eeDomain1Key                   
+#   F008 eeNVFixedPtr                   #   F7E1 _larva_resend_count            
+.   F00A PROTECTBIT                     #   F7E2 _larva_msg_start               
+#   F00B eeSNVTPtr                      #   F7F3 %nciMaxSendHB                  
+.   F00D PROGID                         #   F7F5 %nciMaxSendTI                  
+#   F00D eeIDString                     #   F7F7 %nciMinSendTI                  
+.   F015 MODETABLE                      #   F7F9 %nciMaxSendTM                  
+#   F015 eeModeFlags                    #   F7FB %nciMinSendTM                  
+.   F01A BUFCOUNTS                      #   F7FF eeErrorLog                     
+.   F01D EENEARBYTES                   
+                            SYMBOLS BY NAME
+
+#   EF94 %adr_77                        #   4DCE %fl_from_ulong                 
+#   EF95 %adr_nt                        #   3B75 %fl_ge                         
+#   EF26 %as2                           #   3B6B %fl_gt                         
+#   4911 %as2_to_dg1                    #   E983 %fl_intl_temp                  
+.   4927 %as2_to_dg1%0                  #   3B78 %fl_le                         
+.   492C %as2_to_dg1%1                  #   3B6D %fl_lt                         
+.   4940 %as2_to_dg1%2                  #   3CD8 %fl_mul                        
+.   4945 %as2_to_dg1%3                  #   3B73 %fl_ne                         
+.   494C %as2_to_dg1%4                  #   3E39 %fl_neg                        
+#   4CF7 %clr_bit                       #   4E1E %fl_normalize                  
+#   49C7 %command_op                    #   3E94 %fl_setup                      
+.   49CB %command_op%0                  #   3B84 %fl_sub                        
+.   49EA %command_op%1                  #   E97B %fl_temp1                      
+.   4A73 %command_op%10                 #   E97F %fl_temp2                      
+.   4A73 %command_op%11                 #   4DD7 %fl_ten                        
+.   49E4 %command_op%2                  #   4ED3 %fl_to_intl                    
+.   49EF %command_op%3                  #   3B80 %fl_zero                       
+.   4A0D %command_op%4                  #   EF1A %float_buf                     
+.   4A73 %command_op%5                  #   497A %io_init                       
+.   4A73 %command_op%6                  .   498B %io_init%0                     
+.   4A2C %command_op%7                  .   499D %io_init%1                     
+.   4A52 %command_op%8                  .   499D %io_init%2                     
+.   4A57 %command_op%9                  #   46E2 %max_hertbeat                  
+#   EF88 %data_bf                       .   46FA %max_hertbeat%0                
+#   EF84 %data_bf_b                     .   46FF %max_hertbeat%1                
+#   EF22 %denst_ok_fl                   .   46FF %max_hertbeat%2                
+#   EF28 %dg1                           #   46AA %max_min_data                  
+#   48BB %dg1_to_as2                    .   46C2 %max_min_data%0                
+.   48D2 %dg1_to_as2%0                  .   46C8 %max_min_data%1                
+.   48D9 %dg1_to_as2%1                  .   46E0 %max_min_data%2                
+.   48EE %dg1_to_as2%2                  .   46E0 %max_min_data%3                
+.   48F4 %dg1_to_as2%3                  #   4672 %max_min_state                 
+.   4909 %dg1_to_as2%4                  .   468A %max_min_state%0               
+.   490F %dg1_to_as2%5                  .   4690 %max_min_state%1               
+.   490F %dg1_to_as2%6                  .   46A8 %max_min_state%2               
+#   3B8F %fl_add                        .   46A8 %max_min_state%3               
+#   3E7C %fl_adjust_exp                 #   EF1E %min_data_fl                   
+#   3E5C %fl_arg2_zero                  #   EF1F %min_state_fl                  
+#   3E5E %fl_arg3_zero                  #   E7D0 %nciAlaSetTime                 
+#   3B37 %fl_cmp                        #   E7CE %nciAliveInterval              
+#   3E6F %fl_compare_exp                #   E7CC %nciLsdMinDelta                
+#   3E49 %fl_copy                       #   F7F3 %nciMaxSendHB                  
+#   3E4B %fl_copy1                      #   F7F5 %nciMaxSendTI                  
+#   3D47 %fl_div                        #   E7CA %nciMaxSendTime                
+#   3B69 %fl_eq                         #   F7F9 %nciMaxSendTM                  
+#   E97A %fl_error                      #   F7F7 %nciMinSendTI                  
+#   3EFC %fl_finish                     #   E7C8 %nciMinSendTime                
+#   4E60 %fl_fm_intl                    #   F7FB %nciMinSendTM                  
+#   4D82 %fl_from_long                  #   E7C6 %nciRelRstMode                 
+#   4DC5 %fl_from_slong                 #   E7C4 %nciRelTimeout                 
+#   EF0E %nv_max_send_data              .   4611 %sum_io_in%1                   
+#   EF12 %nv_max_send_state             .   460B %sum_io_in%2                   
+#   EF10 %nv_min_send_data              .   4661 %sum_io_in%3                   
+#   EF14 %nv_min_send_state             .   4661 %sum_io_in%4                   
+#   EF16 %nv_sec                        .   4665 %sum_io_in%5                   
+#   EF0C %nv_send_hertbeat              #   42E2 %tr_denst                      
+#   EF18 %nv_stat                       .   4337 %tr_denst%0                    
+#   EFDB %nviComand                     .   4334 %tr_denst%1                    
+#   E7BE %nviObjRequest                 .   43D9 %tr_denst%10                   
+#   E7C3 %nviRelay1                     .   43C7 %tr_denst%11                   
+#   E7C2 %nviRelay2                     .   43D9 %tr_denst%12                   
+#   E7C1 %nviRelay3                     .   43D9 %tr_denst%13                   
+#   EF96 %nviReset                      .   43E1 %tr_denst%14                   
+#   E7DA %nvoAl1lev                     .   442A %tr_denst%15                   
+#   E7D6 %nvoAl2lev                     .   4424 %tr_denst%16                   
+#   E7FC %nvoAlarm1                     .   4424 %tr_denst%17                   
+#   E7F8 %nvoAlarm2                     .   44F7 %tr_denst%18                   
+#   EFBA %nvoAlarmS                     .   44E7 %tr_denst%19                   
+#   EFBC %nvoComand                     .   4334 %tr_denst%2                    
+#   EFFA %nvoConc                       .   44E7 %tr_denst%20                   
+#   E7F6 %nvoError                      .   4476 %tr_denst%21                   
+#   E7F2 %nvoFault                      .   44E7 %tr_denst%22                   
+#   EFB8 %nvoFaultS                     .   44E1 %tr_denst%23                   
+#   E7EE %nvoGasConc                    .   44E1 %tr_denst%24                   
+#   EF99 %nvoGasName                    .   44F7 %tr_denst%25                   
+#   EF97 %nvoHertBeat                   .   4582 %tr_denst%26                   
+#   E7EA %nvoMaint                      .   4582 %tr_denst%27                   
+#   EFFE %nvoNstate                     .   4582 %tr_denst%28                   
+#   E7DE %nvoObjRequest                 .   4537 %tr_denst%29                   
+#   E7E8 %nvoState                      .   4582 %tr_denst%3                    
+#   E7D4 %nvoState1                     .   4582 %tr_denst%30                   
+#   E7D2 %nvoState2                     .   457C %tr_denst%31                   
+#   E7E4 %nvoWarn                       .   457C %tr_denst%32                   
+#   EF24 %quic_out_fl_data              .   4582 %tr_denst%33                   
+#   EF25 %quic_out_fl_state             .   44FA %tr_denst%4                    
+#   E77E %rx_buf                        .   442D %tr_denst%5                    
+#   4668 %rx_lamp_on                    .   442A %tr_denst%6                    
+.   4670 %rx_lamp_on%0                  .   442A %tr_denst%7                    
+#   EF2A %rx_lamp_timer                 .   4384 %tr_denst%8                    
+#   EF29 %rx_num                        .   43DF %tr_denst%9                    
+#   E97B %s32_temp1                     #   4584 %tr_error                      
+#   E97F %s32_temp2                     .   45AE %tr_error%0                    
+#   E983 %s32_temp3                     .   45AE %tr_error%1                    
+#   4CEE %set_bit                       #   EF20 %tr_ng_cnt                     
+#   EF90 %state_bf                      #   EF21 %tr_ng_fl                      
+#   EF8C %state_bf_b                    #   4785 %trans_data                    
+#   494E %sum_calc                      .   47C5 %trans_data%0                  
+.   4954 %sum_calc%0                    .   47DF %trans_data%1                  
+.   4970 %sum_calc%1                    .   47F6 %trans_data%2                  
+.   4978 %sum_calc%2                    .   47FE %trans_data%3                  
+#   45B0 %sum_io_in                     #   4701 %trans_state                   
+.   45F1 %sum_io_in%0                   .   4727 %trans_state%0                 
+.   474F %trans_state%1                 #   0A38 _adds_8_16                     
+.   473F %trans_state%2                 #   07CF _adjust_checksum1              
+.   4746 %trans_state%3                 #   1649 _alias_count                   
+.   4753 %trans_state%4                 #   0019 _alloc                         
+.   477B %trans_state%5                 #   1BF0 _alter_icntrl_g                
+.   476B %trans_state%6                 #   8001 _alternate_clocking            
+.   4772 %trans_state%7                 #   0B49 _and16                         
+.   4783 %trans_state%8                 #   0378 _app_watchdog                  
+#   4800 %trb_data                      #   00BE _arb_presf                     
+.   481B %trb_data%0                    c   80BE _arbitrary_preempt_safe        
+.   4828 %trb_data%1                    #   1A3B _bit_input                     
+.   48A6 %trb_data%10                   #   1A9B _bit_output_ext                
+.   48AF %trb_data%11                   #   1A9B _bit_output_ext2               
+.   48AF %trb_data%12                   #   1A9F _bit_output_hi                 
+.   48AF %trb_data%2                    #   1AA3 _bit_output_lo1                
+.   4850 %trb_data%3                    #   1AA1 _bit_output_lo2                
+.   485C %trb_data%4                    #   19FA _bitshift_input                
+.   48AF %trb_data%5                    #   34C2 _bitshift_output               
+.   4874 %trb_data%6                    #   34FB _bitshift_setup                
+.   4881 %trb_data%7                    #   0CA0 _bound_mt                      
+.   48AF %trb_data%8                    #   1012 _bound_nv                      
+.   4899 %trb_data%9                    #   1012 _bound_nv1                     
+#   E73E %tx_buf                        #   8008 _build_number                  
+#   48B1 %tx_lamp_on                    #   2BA6 _build_status                  
+.   48B9 %tx_lamp_on%0                  #   0046 _bump_ptr                      
+#   EF2B %tx_lamp_timer                 #   1A51 _byte_input                    
+#   499F %tx_set                        #   1AB3 _byte_output                   
+.   49C5 %tx_set%0                      #   27A2 _calculate_cnfg_checksum       
+#   EF2C %ui_1sec_cnt                   #   071E _change_state                  
+#   EF2D %ui_four_cnt                   #   075E _check_configured              
+#   EF3A %ui_gas_name                   #   305E _checksum_generate             
+#   EF30 %ui_gas_name_b                 #   0C0B _clear_apps_flags              
+#   EF23 %ui_quic_out_hertbeat          c   8000 _const_mask                    
+#   EF64 %ui_trb_bf                     #   0081 _cpu_halt_check                
+#   EF44 %ui_trb_bf_b                   #   E948 _cpu_sync                      
+#   EF2E %ui_tx_cmd                     #   E9BC _dbg_input_is_new              
+#   EF2F %ui_tx_cnt                     #   E8CE _dbg_input_value               
+#   3E21 %ump_cmp                       #   001E _dealloc                       
+#   4EC5 %ump_is_zero                   #   0054 _dec16                         
+#   4F17 %ump_lshift                    #   074F _disable_callbacks             
+.   4BFF _%70DLNDV%INIT                 c   8000 _disable_dynamic_xcvr_config   
+.   4C02 _%70DLNDV%INITV                #   0AA5 _div16                         
+#   8000 __max_transient_app            #   0AD7 _div16s                        
+#   8000 __num_transient_app            #   0A98 _div32_16                      
+#   1A21 _A_delay                       #   0A62 _div32_16_core                 
+#   1A22 _A_delay_b                     #   0A9D _div8                          
+#   1A1F _A_delay_pd                    #   0AB7 _div8s                         
+#   0B3A _abs16                         #   0020 _drop_n                        
+#   0AC9 _abs8                          #   0026 _drop_n_preserve_1             
+#   0A3A _add16                         #   002C _drop_n_preserve_2             
+#   0465 _add_8_16                      #   0024 _drop_n_return_1               
+#   0046 _add_8_16f                     #   002A _drop_n_return_2               
+#   3AB8 _dualslope_input               #   1A6B _init_io_pins                  
+#   3AD9 _dualslope_start               #   1C29 _init_timer_counter1           
+#   3AE5 _edgelog_input                 #   1C2B _init_timer_counter2           
+#   06AC _ee_memcpy                     #   811F _interrupt_capability          
+#   06A8 _ee_memcpy_uncond              #   102B _io_change_init                
+c   8001 _ee_reserved_offset            #   106A _io_changes                    
+#   0695 _ee_write_int                  #   1056 _io_changes_by                 
+#   069A _ee_write_long                 #   104B _io_changes_to                 
+#   34B3 _eefar_init                    #   1A97 _io_direction_hi               
+#   0695 _eeprom_far_write              #   1A97 _io_direction_hi2              
+#   069A _eeprom_far_write_long         #   1A99 _io_direction_lo               
+#   0693 _eeprom_write                  #   E8D5 _io_gen_img                    
+#   0698 _eeprom_write_long             #   1085 _io_input_value                
+c   8001 _eevar_offset                  #   33E9 _io_sci_baud                   
+#   0752 _enable_callbacks              #   3384 _io_sci_get_error              
+#   0B84 _equal16                       #   33D7 _io_sci_init                   
+#   0B82 _equal8                        #   336D _io_sci_parity                 
+c   8000 _evn_byte_1                    #   3404 _io_sci_set_buffer_in          
+c   8000 _evn_byte_2                    #   3408 _io_sci_set_buffer_out         
+c   8010 _evn_byte_3                    #   33C9 _io_scispi_abort               
+c   8013 _evn_byte_4                    #   3380 _io_scispi_input_ready         
+c   8001 _extended_io_count             #   3377 _io_scispi_output_ready        
+c   8003 _extended_onchip_eedata        #   1C17 _io_set_clock                  
+c   8000 _extended_onchip_eeprom        #   3B20 _io_set_clock_x2               
+#   4000 _extended_start                #   33AA _io_spi_clock                  
+#   34BC _extended_version_number       #   3387 _io_spi_get_error              
+c   8001 _feature_set_1                 #   3392 _io_spi_init                   
+c   8000 _feature_set_2                 #   343A _io_spi_set_buffer             
+c   8001 _field_debug                   #   106F _io_update_occurs              
+#   1151 _flush_completes               #   04C4 _iteration16                   
+#   04F7 _free_rcvtx_by_domain          #   0BBB _l_shift16                     
+#   1B13 _frequency_output              #   0BBB _l_shift16s                    
+#   0B73 _gequ16                        #   0BA0 _l_shift8                      
+#   0B5E _gequ16s                       #   0BE9 _l_shift8_3                    
+#   0B77 _gequ8                         #   0BE8 _l_shift8_4                    
+#   0B58 _gequ8s                        #   0BE7 _l_shift8_5                    
+#   05D5 _get_address                   #   0BE6 _l_shift8_6                    
+#   07EA _get_appsum_location           #   0BE5 _l_shift8_7                    
+#   1830 _get_auth_std                  #   0BA0 _l_shift8s                     
+#   05F4 _get_domain                    #   0005 _larva_break                   
+#   06AF _get_error_log                 c   8000 _larva_clear_off               
+#   2D15 _get_prit_p                    #   4C05 _larva_entry                   
+#   2D24 _get_prt_p                     #   E801 _larva_flag                    
+#   1875 _get_rcvtx_p                   #   0086 _larva_L1                      
+#   0386 _get_sem2                      #   0093 _larva_L2                      
+#   352A _get_si_data_ptr               #   235C _larva_L3                      
+#   003E _get_sp                        #   E878 _larva_L4                      
+#   0001 _idem_dup                      #   E9B1 _larva_L5                      
+#   3FFF _image_end                     .   E64E _larva_mem                     
+#   0048 _inc16                         #   F7E2 _larva_msg_start               
+#   068B _index_to_addr                 #   F7E1 _larva_resend_count            
+#   1A1B _init_baud                     #   4DDB _larva_reset                   
+#   4C32 _larva_reset_notify            #   0D98 _msg_addr_set                  
+#   0009 _larva_suspend                 #   0C11 _msg_alloc                     
+#   0100 _larva_version                 #   0C0F _msg_alloc_priority            
+#   E99B _last_retry_extra_time         #   0C71 _msg_alloc_wait                
+#   005B _ldP0_fetchl                   #   0CCA _msg_arrives                   
+#   27AA _leave_indexed_domain          #   0DD0 _msg_auth_get                  
+#   0B65 _less16                        #   0D8B _msg_auth_set                  
+#   0B7F _less16s                       #   0DD9 _msg_byte_get                  
+#   0B69 _less8                         #   0D98 _msg_byte_set                  
+#   0B7C _less8s                        #   0C7E _msg_cancel                    
+#   1A55 _leveldetect_input             #   0CCC _msg_code_arrives              
+#   1B3A _loader_go                     #   0DCA _msg_code_get                  
+#   1ADA _loader_prep                   #   0DCA _msg_code_get_ex               
+#   0B89 _log16                         #   0D78 _msg_code_set                  
+#   0B8A _log8                          #   0CE2 _msg_completes                 
+#   0B86 _lognot16                      #   0E12 _msg_data_blockget             
+#   0B87 _lognot8                       #   0D26 _msg_data_blockset             
+#   0A35 _lshift16_add16                #   0DCC _msg_data_get                  
+#   0A33 _lshift8_add16                 #   0D7A _msg_data_set                  
+#   0A31 _lshift8by1_add16              #   0CDF _msg_fails                     
+#   0A2F _lshift8by2_add16              #   0BF1 _msg_free                      
+#   1E2B _mac_L1                        #   0DDE _msg_in_get                    
+#   0B0E _max16                         #   0E0D _msg_len_get                   
+#   0B18 _max16s                        #   0E0D _msg_len_get_ex                
+#   0AF0 _max8                          #   0D9C _msg_out_set                   
+#   0AFA _max8s                         #   0D63 _msg_priority_set              
+#   0674 _memcmp1                       #   0CC8 _msg_receive                   
+#   0432 _memcpy                        #   0C40 _msg_send                      
+#   0435 _memcpy1                       #   0DD4 _msg_service_get               
+#   06AC _memcpy8                       #   0D8F _msg_service_set               
+c   8001 _memory_forwarding             #   0CE5 _msg_succeeds                  
+#   0444 _memset                        #   0D93 _msg_tag_set                   
+#   0445 _memset1                       #   0D93 _msg_tag_set1                  
+#   043D _memset8                       #   0A48 _mul16                         
+#   0B13 _min16                         #   0A48 _mul16s                        
+#   0B1D _min16s                        #   0A59 _mul8                          
+#   0AF5 _min8                          #   0A41 _mul8l                         
+#   0AFF _min8s                         #   0B31 _mul8ls                        
+#   8002 _min_context4_multiplier       #   0A46 _mul_8_16                      
+#   0B3E _minus16s                      #   0A43 _muls_8_16                     
+#   E8C5 _mip_IF0                       #   3A81 _muxbus_read                   
+#   0546 _mip_L1                        #   3A93 _muxbus_reread                 
+#   0567 _mip_L2                        #   3AAD _muxbus_rewrite                
+#   0521 _mip_L4                        #   3A9E _muxbus_write                  
+#   0522 _mip_L5                        #   26B0 _net_mgmt_processing           
+#   0191 _mip_L6                        #   3A46 _neurowire_inv_master          
+#   059F _mip_T1                        #   0080 _new_binding_constraints       
+#   0AD0 _mod16                         #   1A3D _nibble_input                  
+#   0AE2 _mod16s                        #   1AAB _nibble_output                 
+#   0B05 _mod8                          #   8031 _nm_capabilities               
+#   0ABF _mod8s                         #   19F3 _nm_service_send               
+#   0DD9 _msg_addr_get                  #   1904 _nm_set_nk                     
+#   8002 _nm_version                    #   1B45 _pulsecount_output             
+#   00AF _node_reset                    #   1B07 _pulsewidth_output             
+#   0B44 _not16                         #   000F _push                          
+#   80FF _nv_all                        #   000D _push1                         
+#   E8D0 _nv_array_index                #   3983 _pushd                         
+#   0F72 _nv_array_poll                 #   3981 _pushd1                        
+#   1002 _nv_array_update_completes     #   1BC1 _quadrature_input              
+#   0FF8 _nv_array_update_fails         #   0040 _query_stats                   
+#   0FAD _nv_array_update_occurs        #   0BC7 _r_shift16                     
+#   399F _nv_array_update_request       #   0BD6 _r_shift16s                    
+#   0FFE _nv_array_update_succeeds      #   0B8F _r_shift8                      
+#   164D _nv_count                      #   00C3 _r_shift8_3                    
+#   80FF _nv_count_mask                 #   00C2 _r_shift8_4                    
+#   1672 _nv_get_alias_p                #   00C1 _r_shift8_5                    
+#   165E _nv_get_cnfg_p                 #   00C0 _r_shift8_6                    
+#   166A _nv_get_cnfg_p1                #   00BF _r_shift8_7                    
+#   1651 _nv_get_cnfg_p_pri             #   0B97 _r_shift8s                     
+#   1688 _nv_get_fixed_p                c   8001 _ram_test_power_up_only        
+#   0F5C _nv_poll                       #   06D0 _raw_error_log                 
+#   0F6C _nv_poll_all                   c   8002 _read_only_data_struct_version 
+#   0F57 _nv_update                     #   045F _register_call                 
+#   1001 _nv_update_completes           #   0381 _rel_sem2                      
+#   0FF7 _nv_update_fails               #   0C21 _resp_alloc                    
+#   0F4B _nv_update_int                 #   0CEC _resp_arrives                  
+#   0F4C _nv_update_int_offset          #   0C7E _resp_cancel                   
+#   0F51 _nv_update_long                #   0D6E _resp_code_set                 
+#   0F52 _nv_update_long_offset         #   0D70 _resp_data_set                 
+#   0FAC _nv_update_occurs              #   0BFE _resp_free                     
+#   0F5C _nv_update_request             #   0CE8 _resp_receive                  
+#   0F5C _nv_update_request1            #   0C40 _resp_send                     
+#   3999 _nv_update_request_all         #   0457 _restore_ptrs                  
+#   0FFD _nv_update_succeeds            #   044E _save_ptrs                     
+#   10F1 _offline                       #   2104 _scheduler_loop                
+#   8001 _oma                           #   8003 _sci_spi_features              
+#   1B2B _oneshot_output                c   8001 _sci_spi_supported             
+#   10FF _online                        .   4E16 _se_baud_t                     
+#   1B93 _ontime_input                  .   4E1A _se_baud_toc                   
+#   0B4E _or16                          #   1BF8 _select_input_fn               
+#   1CB9 _parallel_input                #   1BEC _select_mux                    
+#   1C7F _parallel_input_ready          #   27A0 _self_installation             
+#   1CCC _parallel_output               #   4D35 _serial_input                  
+#   1CAB _parallel_output_ready         #   4D02 _serial_output                 
+#   1C78 _parallel_output_request       #   4E04 _serial_sub1                   
+#   1B93 _period_input                  #   19F2 _service_pin_send              
+#   0015 _pop                           #   0CDB _set_apps_flags                
+#   0013 _pop1                          c   8001 _set_nv_length_valid           
+#   398B _popd                          #   3008 _set_ram_ptrs                  
+#   3989 _popd1                         #   1AC7 _set_tco_p                     
+#   10AE _preempt                       #   057A _set_typeout                   
+#   8000 _programmable_driver_strength  c   8000 _sidata_last_eecode            
+c   8000 _programmable_lvi              #   004E _sign_extend16                 
+#   1B93 _pulsecount_input              #   0B6D _signs_differ16                
+#   1A28 _sio_load_delay                #   004B _xch_inc_xch                   
+c   8000 _sio_near                      #   E80C _xcvr_mode                     
+c   8005 _size_addr_tbl_entry           #   0B53 _xor16                         
+#   8100 _size_app_basepg               #   0A28 abs8_twice                     
+c   800F _size_domain_entry             #   E800 activate_service_led           
+c   8004 _size_evn                      .   4A75 APINIT                         
+c   8003 _size_io_change_event          .   4A7A APINITV                        
+c   8004 _size_nv_alias                 #   108C application_restart            
+c   8003 _size_nv_cnfg                  #   E9B1 BASEPG3                        
+c   8003 _size_nv_fix                   .   4DF2 bit_setup                      
+c   800C _size_proxy_route_entry        .   F01A BUFCOUNTS                      
+c   8001 _size_proxy_route_index_entry  #   282D chksum_recalc_mode             
+c   800D _size_rcv_tx                   #   1C7A clear_pio_request              
+c   8000 _size_sys_eevars               #   2C21 clear_status                   
+c   8000 _size_sys_ramvars              #   F02E config_data                    
+c   8004 _size_timer                    .   4C3B copy_from_stack                
+c   801C _size_tx_ctl_blk               #   3A13 crc16                          
+#   1183 _sleep                         #   36DF crc16_ccitt                    
+#   8001 _stretched_triac_supported     #   3A32 crc8                           
+#   0B25 _sub16                         .   4B16 DBGSIG                         
+#   E9AF _sys_callback_address          #   04B9 delay                          
+#   06BC _sys_error_log                 #   04B0 delay_1msec                    
+#   04F4 _sys_flag_clear                .   F008 DIRECTORY                      
+#   0502 _sys_flag_set                  .   F047 DOMAIN                         
+#   E939 _sys_flags                     #   E96C ee_lock                        
+#   E954 _sys_stat                      #   F037 eeAltClock                     
+c   8001 _sysimgext_nv_length_override  #   F036 eeClock                        
+c   8001 _sysimgext_phase               #   F036 eeCommStart                    
+c   8001 _sysimgext_proxy               #   F024 eeCustomMac                    
+c   82BD _sysram_base_usage             #   F047 eeDomain                       
+#   8001 _system_image_extensions       #   F050 eeDomain0Key                   
+c   8013 _system_version                #   F05F eeDomain1Key                   
+#   8000 _system_version_minor          #   F7FF eeErrorLog                     
+#   03C4 _timer_events                  #   F00D eeIDString                     
+#   03E4 _timer_expires                 #   F015 eeModeFlags                    
+#   03F1 _timer_expires_any             .   F01D EENEARBYTES                    
+#   0418 _timer_get                     #   F000 eeNeuronID                     
+#   03F8 _timer_mset                    #   F029 eeNVCount                      
+#   03FA _timer_mset_repeat             #   F008 eeNVFixedPtr                   
+#   03F4 _timer_off                     #   F02B eeSNVT2Ptr                     
+#   03FF _timer_sset                    #   F00B eeSNVTPtr                      
+#   0403 _timer_sset_repeat             #   06BF error_log                      
+#   0348 _timer_update                  #   1146 flush                          
+#   1B87 _totalize_input                #   04F2 flush_cancel                   
+#   1B38 _triac_level_output            #   4B13 get_declared_nv_length         
+#   1B38 _triac_output                  #   1141 go_offline                     
+#   1B30 _triac_pulse_output            #   E9BC input_is_new                   
+#   1B13 _triggered_count_output        #   E8CE input_value                    
+#   0002 _tx_by_addr                    #   3B28 io_edgelog_preload             
+#   0429 _unpack_nibs                   #   3324 io_iaccess                     
+#   2740 _update_address                #   32FE io_idis                        
+#   0CC5 _wink                          #   3300 io_iena                        
+#   333A io_iperiod                     #   3675 siuspi_idlewait                
+#   3335 io_irelease                    #   362C siuspi_init                    
+#   331F io_itc_clear                   #   3686 siuspi_initw3                  
+#   331A io_itc_cond                    #   3692 siuspi_initw4                  
+#   3307 io_mask_isr                    #   369A siuspi_inst1                   
+#   E8D1 io_pdata_imgs                  #   36C7 siuspi_rdsr                    
+#   E8C7 io_pin_event_data              #   364F siuspi_read_a3                 
+#   32DF io_set_isr                     #   3651 siuspi_read_a3nc               
+.   4002 larva_patch                    #   3699 siuspi_wren                    
+#   19D8 make_apdu_p                    #   3688 siuspi_write3                  
+.   4DEA mask_table                     #   3694 siuspi_write4                  
+.   F015 MODETABLE                      .   4BB7 TEVT                           
+#   04B6 msec_delay                     #   041F timers_off                     
+#   E83C msg_tag_index                  .   F023 TX_CTRL                        
+#   39C4 muldiv24                       #   007B watchdog_update                
+#   39FD muldiv24s                      #   007D watchdog_update_old            
+#   00AF node_reset                     .   4013 WHEN1                          
+#   E96D nsa_features                   .   4021 WHEN1%0                        
+#   E96D nsa_relative                   .   4025 WHEN1%1                        
+#   E8D0 nv_array_index                 .   4033 WHEN1%2                        
+#   E94C nv_in_addr                     .   4037 WHEN1%3                        
+#   E83C nv_in_index                    .   4037 WHEN1%4                        
+#   10E3 offline_confirm                .   40E9 WHEN10                         
+#   1104 online_confirm                 .   40FD WHEN10%0                       
+#   08FA post_events                    .   413B WHEN10%1                       
+#   3991 preemption_mode                .   41CC WHEN10%10                      
+.   F00D PROGID                         .   41AD WHEN10%11                      
+.   F00A PROTECTBIT                     .   41C9 WHEN10%12                      
+#   E856 qfree_out                      .   4211 WHEN10%13                      
+#   E85E qincoming                      .   41F5 WHEN10%14                      
+#   E862 qresponse                      .   4211 WHEN10%15                      
+#   E84D ramQElemSizeIn                 .   4217 WHEN10%16                      
+#   E84E ramQElemSizeOut                .   411B WHEN10%2                       
+#   0BED random                         .   4138 WHEN10%3                       
+#   F000 read_only_data                 .   412F WHEN10%4                       
+#   F024 read_only_data_2               .   4138 WHEN10%5                       
+#   F029 read_only_data_3               .   4144 WHEN10%6                       
+.   4AB7 RESET                          .   4211 WHEN10%7                       
+.   4B11 RESET%0                        .   4151 WHEN10%8                       
+.   4AB4 RESET0                         .   4173 WHEN10%9                       
+#   1198 retrieve_xcvr_status           .   4219 WHEN11                         
+#   04BB scaled_delay                   .   422D WHEN11%0                       
+#   39B0 service_pin_msg_send           .   4233 WHEN11%1                       
+#   39BB service_pin_state              .   4235 WHEN12                         
+#   1A31 set_base2p                     .   423B WHEN12%0                       
+#   1A36 set_base_p                     .   423D WHEN13                         
+#   0919 set_eeprom_lock                .   424A WHEN13%0                       
+#   3259 set_irq_debugging              .   424C WHEN14                         
+.   4F2B SIDATA                         .   4259 WHEN14%0                       
+#   363D siu_writeloop                  .   425B WHEN15                         
+#   364D siuspi_cmp_a3                  .   4268 WHEN15%0                       
+#   3680 siuspi_idledecs                .   426A WHEN16                         
+.   4277 WHEN16%0                       .   4062 WHEN5%0                        
+.   4279 WHEN17                         .   4064 WHEN6                          
+.   4286 WHEN17%0                       .   4067 WHEN6%0                        
+.   4288 WHEN18                         .   4069 WHEN7                          
+.   4295 WHEN18%0                       .   406C WHEN7%0                        
+.   429A WHEN18%1                       .   406E WHEN8                          
+.   429A WHEN18%2                       .   4081 WHEN8%0                        
+.   429C WHEN19                         .   4084 WHEN8%1                        
+.   42A2 WHEN19%0                       .   408F WHEN8%2                        
+.   4039 WHEN2                          .   40D1 WHEN8%3                        
+.   403B WHEN2%0                        .   40A8 WHEN8%4                        
+.   42A4 WHEN20                         .   40D1 WHEN8%5                        
+.   42E0 WHEN20%0                       .   40C1 WHEN8%6                        
+.   42E0 WHEN20%1                       .   40C8 WHEN8%7                        
+.   42E0 WHEN20%2                       .   40D1 WHEN8%8                        
+.   42E0 WHEN20%3                       .   40D3 WHEN9                          
+.   403D WHEN3                          .   40E1 WHEN9%0                        
+.   404C WHEN3%0                        .   40E7 WHEN9%1                        
+.   404C WHEN3%1                        .   4A86 WINK                           
+.   404E WHEN4                          .   4A8B WINK%0                         
+.   405D WHEN4%0                        .   4AB2 WINK%1                         
+.   405D WHEN4%1                        .   4AB2 WINK%2                         
+.   405F WHEN5                         
+ 

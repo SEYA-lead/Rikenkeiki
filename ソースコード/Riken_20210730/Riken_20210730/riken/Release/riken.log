@@ -1,0 +1,190 @@
+Build log C:\lm\Source\Riken\riken\Release\riken.log
+Created Friday, July 30, 2021, at 09:52:19
+
+Build due for component Neuron (R) C Compiler, reason: File C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H is present but modified
+Requesting build from Neuron (R) C Compiler
+Compiling...
+Neuron (R) C Compiler: C:\Users\info\Desktop\riken\src\70DLNDV.NC
+Warning: C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H   41( 20):
+        The NVT (Network Variable Type) is obsolete [NCC#554]
+Warning: C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H   42( 20):
+        The NVT (Network Variable Type) is obsolete [NCC#554]
+Warning: C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H   44( 20):
+        The NVT (Network Variable Type) is obsolete [NCC#554]
+Warning: C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H   46( 20):
+        The NVT (Network Variable Type) is obsolete [NCC#554]
+Warning: C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H   48( 20):
+        The NVT (Network Variable Type) is obsolete [NCC#554]
+Warning: C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H   60( 15):
+        The NVT (Network Variable Type) is obsolete [NCC#554]
+Warning: C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H   88( 19):
+        The NVT (Network Variable Type) is obsolete [NCC#554]
+Warning: C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H   89( 19):
+        The NVT (Network Variable Type) is obsolete [NCC#554]
+Warning: C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H   90( 19):
+        The NVT (Network Variable Type) is obsolete [NCC#554]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoAlarm1' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoAlarm2' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoError' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoFault' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoGasConc' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoMaint' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoState' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoWarn' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoObjRequest' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoAl1lev' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoAl2lev' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoState1' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nvoState2' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nciAlaSetTime' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nciAliveInterval' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nciLsdMinDelta' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nciMaxSendTime' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nciMinSendTime' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nciRelRstMode' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nciRelTimeout' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nviRelay1' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nviRelay2' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nviRelay3' was declared but never used [NCC#310]
+Warning: C:\Users\info\Desktop\riken\src\70DLNDV.NC   20( 54):
+        The symbol 'nviObjRequest' was declared but never used [NCC#310]
+Compiling C:\Users\info\Desktop\riken\src\70DLNDV.NC succeeded with result code 0.
+Requesting build from Neuron (R) Assembler
+Assembling...
+Neuron (R) Assembler: C:\lm\Source\Riken\riken\Release\IM\riken.ns
+Assembling C:\lm\Source\Riken\riken\Release\IM\riken.ns succeeded with result code 0.
+Requesting build from Neuron (R) Linker
+Linking...
+Neuron (R) Linker: riken
+Linking riken::Release succeeded with result code 0.
+                       LIST OF MEMORY AREAS
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+SYSTEM IMAGE ROM             0000 3FFF 4000        - RESERVED - 
+OffChip NVRAM  (EECODE)      4000 4EFF 0F00       4E9F 4EFF 0061
+OffChip NVRAM  (Pool)         - AVAILABLE -       4F00 BFFF 7100
+OffChip RAM    (Pool)         - AVAILABLE -       C000 E6FF 2700
+OffChip RAMFAR               E700 E7FF 0100       E700 E73D 003E
+OnChip  RAM    (System)      E800 EEEC 06ED          - NONE -   
+OnChip  RAM    (Pool)         - AVAILABLE -       EEED EF0B 001F
+OnChip  RAMNEAR              EF0C EFFF 00F4          - NONE -   
+OnChip  EEPROM (Prolog)      F000 F02D 002E          - NONE -   
+OnChip  EEPROM (Config)      F02E F158 012B          - NONE -   
+OnChip  EEPROM (MemCtl)      F159 F166 000E          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F167 F7EE 0688
+OnChip  EENEAR               F7EF F7FE 0010       F7EF F7F4 0006
+OnChip  EEPROM (Epilog)      F7FF F7FF 0001          - NONE -   
+Transient      (Table)   000000 000000 000000        - NONE -   
+Transient      (Code)    000000 000000 000000        - NONE -   
+End of Memory Area List
+Link Memory Usage Statistics:
+EEPROM Usage:  (not necessarily in order of physical layout)
+               (includes application use of external NVRAM)
+        System Data and Parameters          89 bytes
+        Domain and Address Tables           90 bytes
+        Network Variable Config Tables     183 bytes
+        Onchip Data Area Fragmentation       6 bytes
+        Application EEPROM Variables        10 bytes
+        Library EEPROM Variables             0 bytes
+        Application Code and Const Data   2619 bytes
+        Library Code and Const Data        558 bytes
+        Self-Identification Data           564 bytes
+                                         -----
+        Total EEPROM Requirement          4119 bytes
+        Remaining EEPROM                 30697 bytes
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         701 bytes
+        Transaction Control Blocks         236 bytes
+        Appl Timers and I/O Change Events   32 bytes
+        Network and Application Buffers    804 bytes
+        Application RAM Variables          438 bytes
+        Library RAM Variables                0 bytes
+                                         -----
+        Total RAM Requirement             2211 bytes
+        Remaining RAM                    10077 bytes
+Transient Code Usage:
+        Transient code                       0 functions
+        Transient code for functions         0 bytes
+        Transient code table                 0 bytes
+                                         -----
+        Total transient data                 0 bytes
+Successfully linked for FT 5000.
+        Memory Map (9 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        Onchip EEPROM Data Fragmentation (6 bytes) varies by Neuron model.
+        System Upper EEPROM Area (1 byte) varies by firmware version.
+        16 receive transaction blocks require 16 * 13 = 208 bytes.
+        28 bytes for non-priority transmit transaction control blocks
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 439 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        Default buffer counts vary by Neuron model
+                (resulting in an additional 108 bytes of RAM).
+        NVRAM Signature  = 0000 @ 4000 .. 4001
+Buffer Configuration Summary:
+        Application input buffers: 3 at 42 bytes
+        Application output buffers: 2 (normal) + 0 (prio) at 42 bytes
+        Network input buffers: 7 at 66 bytes
+        Network output buffers: 2 (normal) + 0 (prio) at 66 bytes
+System Configuration Summary:
+        Domains: 1 at 15 bytes each
+        Addresses: 15 at 5 bytes each
+        Aliases: 6 at 4 bytes each
+End of Link Statistics
+Warning: The channel type number noted in the program ID 9000000000000005 is 0 (0x00), whereas the transceiver is designed for channel type 4 (0x04) [PMK#4006]
+Requesting build from Neuron (R) Exporter
+Exporting...
+Neuron (R) Exporter: riken
+Creating 'C:\lm\Source\Riken\riken\Release\riken.NXE'... Done.
+Creating 'C:\lm\Source\Riken\riken\Release\riken.XIF'... Done.
+Creating 'C:\lm\Source\Riken\riken\Release\riken.XFB'... Done.
+Creating 'C:\lm\Source\Riken\riken\Release\riken.NEI'... Done.
+Creating 'C:\lm\Source\Riken\riken\Release\riken.NDL'... Done.
+Creating 'C:\lm\Source\Riken\riken\Release\riken.APB'... Done.
+Creating 'C:\lm\Source\Riken\riken\Release\riken.NME'... Done.
+Exporting riken succeeded with result code 0.
+C:\Program Files (x86)\LonWorks\NodeBuilder\Templates\Hardware\NbPlatforms.xml
+C:\Program Files (x86)\LonWorks\Types\Neuron.xml
+C:\Program Files (x86)\LonWorks\Images\Default.ver
+C:\Program Files (x86)\LonWorks\Images\Ver19\BFT5000.sym
+C:\Users\info\Desktop\riken\src\70DLNDV.NC
+C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\BPLATE.NS
+C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\ECHELON.H
+C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\MODNVLEN.H
+C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\SNVT_LEV.H
+C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\CONTROL.H
+C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\FLOAT.H
+C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\ACCESS.H
+C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\ADDRDEFS.H
+C:\PROGRAM FILES (X86)\LONWORKS\NEURONC\INCLUDE\BYTE.H
+C:\USERS\INFO\DESKTOP\RIKEN\SRC\SLAV_77.H
+C:\USERS\INFO\DESKTOP\RIKEN\SRC\SUB_77.H
+C:\USERS\INFO\DESKTOP\RIKEN\SRC\MAIN_77.C
+C:\USERS\INFO\DESKTOP\RIKEN\SRC\DENST_77.C
+C:\USERS\INFO\DESKTOP\RIKEN\SRC\ETC_77.C
+C:\USERS\INFO\DESKTOP\RIKEN\SRC\COMM_77.C

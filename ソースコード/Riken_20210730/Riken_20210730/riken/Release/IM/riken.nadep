@@ -1,0 +1,32 @@
+; Echelon Dependency File - do not edit.
+; C:\lm\Source\Riken\riken\Release\IM\riken.nadep
+; Created Friday, July 30, 2021, 09:52:19
+
+[Global]
+Provider=NEURON Assembler
+Version=1
+Inputs=1
+Outputs=1
+Switches=1
+Parameters=0
+
+[Input_1]
+Basename=riken.ns
+Fullname=C:\lm\Source\Riken\riken\Release\IM\riken.ns
+Type=0
+Size=49319
+TimestampHigh=0x1d784dd
+TimestampLow=0x267228ae
+
+[Output_1]
+Basename=riken.no
+Fullname=C:\lm\Source\Riken\riken\Release\IM\riken.no
+Type=0
+Size=40041
+TimestampHigh=0x1d784dd
+TimestampLow=0x267bb1df
+
+[Switches]
+8=C:\lm\Source\Riken\riken\Release\IM\riken
+
+[Parameters]
